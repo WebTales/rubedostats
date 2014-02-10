@@ -1,0 +1,7 @@
+{
+    "require": {
+        "knplabs/github-api": "*",
+        "knplabs/packagist-api": "*"
+    },
+    "minimum-stability": "dev"
+}
