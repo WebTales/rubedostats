@@ -13,7 +13,7 @@ $packagistClient = new PackagistClient();
 $packagistStats = $packagistClient->get('webtales/rubedo')->getDownloads();
 $releases = $githubClient->api('repo')->releases()->all('webtales', 'rubedo');
 
-$cloneActivityURL = 'http://extranet.webtales.fr/rubedostats/';
+$cloneActivityURL = 'https://github.com/WebTales/rubedo/graphs/clone-activity-data';
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $cloneActivityURL);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
