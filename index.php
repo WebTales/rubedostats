@@ -17,8 +17,8 @@ $cloneActivityURL = 'https://github.com/WebTales/rubedo/graphs/clone-activity-da
 $user="webtalesremote";
 $password="iVsRamYIC>9HtOC";
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $cloneActivityURL);
-curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);
+curl_setopt($ch, CURLOPT_URL, $cloneActivityURL.' -u '.$user.':'.$password);
+//curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_USERAGENT, 'Rubedo stats');
 $resultat = @curl_exec ($ch);
