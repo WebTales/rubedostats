@@ -13,17 +13,6 @@ $packagistClient = new PackagistClient();
 $packagistStats = $packagistClient->get('webtales/rubedo')->getDownloads();
 $releases = $githubClient->api('repo')->releases()->all('webtales', 'rubedo');
 
-$cloneActivityURL = 'https://github.com/WebTales/rubedo/graphs/clone-activity-data';
-$user="webtalesremote";
-$password="iVsRamYIC>9HtOC";
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $cloneActivityURL.' -u '.$user.':'.$password);
-//curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_USERAGENT, 'Rubedo stats');
-$resultat = @curl_exec ($ch);
-curl_close($ch);
-
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -39,10 +28,6 @@ curl_close($ch);
             <li>Ce mois : <?php echo $packagistStats->getMonthly(); ?></li>
             <li>Ce jour : <?php echo $packagistStats->getDaily(); ?></li>
         </ul>
-		<h2>Git clone</h2>
-		<ul>
-			<li><?php var_dump($resultat); ?></li>
-		</ul>
         <h2>Téléchargements Github</h2>
         <ul>
         <?php
